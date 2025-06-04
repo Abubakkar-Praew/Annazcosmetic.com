@@ -1,80 +1,429 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Annaz Cosmetic | Under Maintenance</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f5f5f5, #ffe6f0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-        }
-
-        .container {
-            background-color: white;
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        h1 {
-            color: #e91e63;
-            margin-bottom: 10px;
-        }
-
-        p {
-            color: #555;
-            font-size: 18px;
-        }
-
-        .blinker {
-            color: #e91e63;
-            font-weight: bold;
-            animation: blink 1.5s infinite;
-        }
-
-        @keyframes blink {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.2;
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnnazCosmetic - Beauty, Fashion & Health Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <div class="container">
-        <h1>🚧 Annaz Cosmetic</h1>
-        <p>We are currently <span class="blinker">under maintenance</span>.</p>
-        <p>Please check back soon.</p>
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar">
+        <p>Free shipping on orders over $50 | Use code WELCOME10 for 10% off</p>
     </div>
-</body>
 
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Logo -->
+            <div class="logo">
+                <a href="/">
+                    <img src="logo.png" alt="AnnazCosmetic" width="180">
+                </a>
+            </div>
+
+            <!-- Main Navigation -->
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="/">Home</a></li>
+                    
+                    <!-- Shop Dropdown -->
+                    <li class="dropdown">
+                        <a href="/shop">Shop <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-column">
+                                <h3>Beauty</h3>
+                                <ul>
+                                    <li><a href="/skincare">Skincare</a></li>
+                                    <li><a href="/makeup">Makeup</a></li>
+                                    <li><a href="/haircare">Haircare</a></li>
+                                    <li><a href="/fragrances">Fragrances</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h3>Fashion</h3>
+                                <ul>
+                                    <li><a href="/womens-clothing">Women's Clothing</a></li>
+                                    <li><a href="/mens-clothing">Men's Clothing</a></li>
+                                    <li><a href="/accessories">Accessories</a></li>
+                                    <li><a href="/jewelry">Jewelry</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h3>Health & Wellness</h3>
+                                <ul>
+                                    <li><a href="/vitamins">Vitamins</a></li>
+                                    <li><a href="/supplements">Supplements</a></li>
+                                    <li><a href="/personal-care">Personal Care</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h3>Men's Grooming</h3>
+                                <ul>
+                                    <li><a href="/beard-care">Beard Care</a></li>
+                                    <li><a href="/shaving">Shaving</a></li>
+                                    <li><a href="/mens-skincare">Skincare</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li><a href="/brands">Brands</a></li>
+                    <li><a href="/new-arrivals">New Arrivals</a></li>
+                    <li><a href="/sale">Sale</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                </ul>
+            </nav>
+
+            <!-- User Actions -->
+            <div class="user-actions">
+                <div class="search-box">
+                    <button class="search-toggle" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <form class="search-form" action="/search" method="GET">
+                        <input type="text" placeholder="Search products..." name="q">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <a href="/account" class="account-link" aria-label="Account">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="/cart" class="cart-link" aria-label="Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Mobile Search -->
+        <div class="mobile-search">
+            <form action="/search" method="GET">
+                <input type="text" placeholder="Search products..." name="q">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-container">
+            <button class="mobile-menu-close" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+            <ul class="mobile-nav-list">
+                <li><a href="/">Home</a></li>
+                <li class="mobile-dropdown">
+                    <a href="/shop">Shop <i class="fas fa-chevron-down"></i></a>
+                    <ul class="mobile-submenu">
+                        <li><a href="/skincare">Skincare</a></li>
+                        <li><a href="/makeup">Makeup</a></li>
+                        <li><a href="/haircare">Haircare</a></li>
+                        <li><a href="/fragrances">Fragrances</a></li>
+                        <li><a href="/womens-clothing">Women's Clothing</a></li>
+                        <li><a href="/mens-clothing">Men's Clothing</a></li>
+                        <li><a href="/accessories">Accessories</a></li>
+                        <li><a href="/vitamins">Vitamins</a></li>
+                        <li><a href="/supplements">Supplements</a></li>
+                        <li><a href="/beard-care">Beard Care</a></li>
+                    </ul>
+                </li>
+                <li><a href="/brands">Brands</a></li>
+                <li><a href="/new-arrivals">New Arrivals</a></li>
+                <li><a href="/sale">Sale</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Main Content -->
+    <main>
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h1>Summer Beauty Sale</h1>
+            <p>Up to 50% off on selected items</p>
+            <a href="/sale" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="featured-categories">
+        <div class="section-header">
+            <h2>Shop by Category</h2>
+            <a href="/shop" class="view-all">View All</a>
+        </div>
+        <div class="categories-grid">
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Skincare">
+                <div class="category-info">
+                    <h3>Skincare</h3>
+                    <a href="/skincare" class="btn-outline">Shop Now</a>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Makeup">
+                <div class="category-info">
+                    <h3>Makeup</h3>
+                    <a href="/makeup" class="btn-outline">Shop Now</a>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1608248543803-ba9f8a133506?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Haircare">
+                <div class="category-info">
+                    <h3>Haircare</h3>
+                    <a href="/haircare" class="btn-outline">Shop Now</a>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Fragrances">
+                <div class="category-info">
+                    <h3>Fragrances</h3>
+                    <a href="/fragrances" class="btn-outline">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <section class="promo-banner">
+        <div class="promo-content">
+            <h2>Limited Time Offer</h2>
+            <p>Get 20% off your first order with code WELCOME20</p>
+            <a href="/shop" class="btn-white">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="section-header">
+            <h2>Best Sellers</h2>
+            <a href="/shop" class="view-all">View All</a>
+        </div>
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-badge">Sale</div>
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Vitamin C Serum">
+                    <div class="product-actions">
+                        <button class="quick-view">Quick View</button>
+                        <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Vitamin C Brightening Serum</h3>
+                    <div class="product-price">
+                        <span class="current-price">$24.99</span>
+                        <span class="original-price">$34.99</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-badge">New</div>
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Matte Lipstick">
+                    <div class="product-actions">
+                        <button class="quick-view">Quick View</button>
+                        <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Matte Liquid Lipstick</h3>
+                    <div class="product-price">
+                        <span class="current-price">$14.99</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Hair Mask">
+                    <div class="product-actions">
+                        <button class="quick-view">Quick View</button>
+                        <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Hydrating Hair Mask</h3>
+                    <div class="product-price">
+                        <span class="current-price">$19.99</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-badge">Popular</div>
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1615368144592-5a5e3b5d5b5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Perfume">
+                    <div class="product-actions">
+                        <button class="quick-view">Quick View</button>
+                        <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Eau de Parfum</h3>
+                    <div class="product-price">
+                        <span class="current-price">$59.99</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-header">
+            <h2>What Our Customers Say</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"The Vitamin C Serum has completely transformed my skin! I've noticed a significant reduction in dark spots after just 2 weeks of use."</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J.">
+                    <span>Sarah J.</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"I'm in love with the matte lipsticks! The colors are gorgeous and they last all day without drying my lips."</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily R.">
+                    <span>Emily R.</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p>"The hair mask is a game changer for my dry, damaged hair. It feels so soft and healthy after just one use!"</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T.">
+                    <span>Michael T.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="newsletter-content">
+            <h2>Join Our Beauty Community</h2>
+            <p>Subscribe to get exclusive offers, beauty tips, and new product announcements</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit" class="btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+    </main>
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="/beauty">Beauty</a></li>
+                    <li><a href="/fashion">Fashion</a></li>
+                    <li><a href="/health">Health & Wellness</a></li>
+                    <li><a href="/mens-grooming">Men's Grooming</a></li>
+                    <li><a href="/new-arrivals">New Arrivals</a></li>
+                    <li><a href="/best-sellers">Best Sellers</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="/contact">Contact Us</a></li>
+                    <li><a href="/shipping">Shipping Policy</a></li>
+                    <li><a href="/returns">Returns & Refunds</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/track-order">Track Order</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="/our-story">Our Story</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/careers">Careers</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+                <div class="newsletter">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <form action="/newsletter" method="POST">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 AnnazCosmetic. All rights reserved.</p>
+            <div class="payment-methods">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-amex"></i>
+                <i class="fab fa-cc-paypal"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
 </html>
