@@ -62,6 +62,12 @@
             }
         }
 
+        /* Mobile Toggle */
+        .mobile-search-toggle {
+            font-size: 2rem;
+            display: none;
+        }
+
 
         /* Main Header */
         .main-header {
@@ -385,12 +391,12 @@
         }
 
         @media (max-width: 768px) {
-            .mobile-menu-toggle {
+            .mobile-search-toggle {
                 display: block;
+                cursor: pointer;
             }
 
-            .main-nav,
-            .user-actions .search-box {
+            .main-nav {
                 display: none;
             }
 
@@ -420,6 +426,10 @@
             .announcement-bar {
                 font-size: 12px;
                 padding: 5px 0;
+            }
+
+            .user-actions .search-box {
+                display: block;
             }
 
             .footer-column {
