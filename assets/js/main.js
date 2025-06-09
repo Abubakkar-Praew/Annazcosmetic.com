@@ -1,15 +1,22 @@
 const toggleIcon = document.getElementById('toggleIcon');
+const mobiletoggleIcon = document.getElementById('mobiletoggleIcon');
+const mobileOverlay = document.getElementById("nav-overlay-container");
 
 // Mobile Toggler function
 
 toggleIcon.addEventListener('click', () => {
     if (toggleIcon.classList.contains('fa-toggle-off')) {
         toggleIcon.classList.replace('fa-toggle-off', 'fa-toggle-on');
+        mobileOverlay.classList.add("animate__fadeInLeftBig");
+        mobileOverlay.classList.replace("hidden", "visible");
+
     } else {
         toggleIcon.classList.replace('fa-toggle-on', 'fa-toggle-off');
+        toggleIcon.classList.add("animate__fadeInLeft");
+        mobileOverlay.classList.add("animate__fadeOutLeftBig");
+        mobileOverlay.classList.replace("visible", "hidden");
     }
 });
-
 
 
 
